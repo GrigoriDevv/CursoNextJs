@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Class } from "@/components/course-content/components/Class";
+import { ClassGroup } from "@/components/course-content/components/ClassGroup";
 import { CourseHeader } from "@/components/course-header/CourseHeader";
 import { StartCourse } from "@/components/StartCourse";
 import { Metadata } from "next";
+import { title } from "process";
 
 interface Props {
   params: { id: string };
@@ -30,11 +31,23 @@ export default function PageCourseDetail({ params }: Props) {
           />
         </div>
 
-        <div className="flex-[2]">
+        <div className="flex-[2] flex flex-col gap-4">
           <CourseHeader />
-          <Class
-            playerUrl="/player/{courseId}/{classId} "
-            title=" NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto"
+          <ClassGroup
+            title="Introdução e apresentação do projeto"
+            courseId="123"
+            classes={[
+              {
+                id: "1234",
+                title:
+                  "NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto",
+              },
+              {
+                id: "1235",
+                title:
+                  "NextJS, TailwindCSS e Typescript: #01 - Apresentação do protótipo",
+              },
+            ]}
           />
         </div>
       </div>
