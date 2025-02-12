@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { Class } from "@/components/course-content/components/Class";
 import { CourseHeader } from "@/components/course-header/CourseHeader";
 import { StartCourse } from "@/components/StartCourse";
 import { Metadata } from "next";
@@ -31,11 +32,10 @@ export default function PageCourseDetail({ params }: Props) {
 
         <div className="flex-[2]">
           <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
-          <CourseHeader />
+          <Class
+            playerUrl="/player/{courseId}/{classId} "
+            title=" NextJS, TailwindCSS e Typescript: #00 - Apresentação do projeto"
+          />
         </div>
       </div>
     </main>
